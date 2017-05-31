@@ -1,55 +1,170 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Allison Lee</title>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="author" content="Allison Lee">
-		<script src="js/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
-	</head>
+ <html>
+ 	<head>
+ 		<title>Allison Lee</title>
+ 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+ 		<meta name="author" content="Allison Lee">
+ 		<script src="https://use.fontawesome.com/df62121d02.js"></script>
+ 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 		<script>
+	 		$("#slideshow > div:gt(0)").hide();
 
-	<header>
-		<div>
-			<nav class="navbar navbar-inverse navbar-fixed-top">
-  				<div class="container-fluid">
-    					<div class="navbar-header">
-      						<a class="navbar-brand" href="#">Allison Lee</a>
-    					</div>
-    					<ul class="nav navbar-nav">
-      						<li><a href="projects.html">Projects</a></li>
-      						<li><a href="resume.html">Résumé</a></li>
-      						<li><a href="contact.html">Say hi!</a></li>
-    					</ul>
-  				</div>
-			</nav>
+			setInterval(function() {
+			  $('#slideshow > div:first')
+			    .fadeOut(1500)
+			    .next()
+			    .fadeIn(1500)
+			    .end()
+			    .appendTo('#slideshow');
+			}, 5000);
+ 		</script>
+ 		<style>
+			body {
+				background-color: #f7e6ff;
+				font-family: fantasy;
+				margin: 0px;
+			}
+
+			h2 {
+				padding-left: 20px;
+				color: #4d004d;
+				margin-top: 40px;
+				font-family: cursive;
+			}
+			
+			p    {
+				color: #4d004d;
+			}
+			
+			header {
+				font-family: cursive;
+				text-align: center;
+				color: #f7e6ff;
+				background: white;
+				padding: 22px;
+				font-size: 25px;
+			}
+
+			footer {
+				font-family: cursive;
+				text-align: center;
+				color: #f7e6ff;
+			}
+			
+			a:link {
+				color: #808080;
+				text-decoration: none;
+			}
+
+			a:hover {
+				color: silver;
+			}
+
+			span {
+				padding-left: 8px;
+				padding-right: 8px;
+			}
+
+			img {
+			    max-width: 100%;
+			    max-height: 100%;
+			    display: block;
+			    margin: auto;
+			}
+
+			.smallfont {
+				font-size: 16px;
+				text-align: center;
+			}
+
+			.blurb {
+				margin: 30px 100px 30px 100px;
+				border-style: double; 
+				background-color: white;
+				border-color: #DCDCDC;
+    			box-shadow: 0px 0px 0px 20px white;
+			}
+
+			.inblurb {
+				margin-left: 40px;
+				padding-right:40px;
+			}
+
+			#slideshow { 
+			    float: right;
+			    position: relative; 
+			    width: 340px; 
+			    height: 300px; 
+			    margin-left: 30px;
+			    margin-right: 40px;
+			}
+
+			#slideshow div { 
+			    position: absolute; 
+			    top: 10px; 
+			    left: 10px; 
+			    right: 10px; 
+			    bottom: 10px; 
+			}
+
+		</style>
+ 	</head>
+ 
+ 	<header>
+		<a href="../">Allison Lee</a>
+		<div class="smallfont">
+			<a href="projects.html"><span>Projects </span></a>
+			<a href="resume.html"><span>Résumé </span></a>
+			<a href="contact.html"><span>Say hi!</span></a>
 		</div>
-	</header>
-	<br><br><br><br>
-	<body>
-		<div id="pink-background" class="wrapper">
-			<h2>Hello!</h2>
-			<p>Hi, my name is Allison. 
-			</p>
-			<p>Please feel free to check out my projects, résumé, or say hi!
-			</p>
-		</div>
-		<div id="white-background" class="wrapper">
-			<h2>Current hobbies</h2>
-			<p>
-				A capella<br>
-				Travelling (I'm in Tokyo right now!!)<br>
-			</p>
-		</div>
+ 	</header>
+
+ 	<br><br>
+
+ 	<body>
+ 		<div class = "blurb">
+ 			<h2>Hello!</h2>
+ 			<div id="slideshow">
+				   <div>
+				     <img src="photos/photo1.jpg">
+				   </div>
+				   <div>
+				     <img src="photos/photo2.jpg">
+				   </div>
+				   <div>
+				     <img src="photos/photo3.jpg">
+				   </div>
+			</div>
 
 
-		<div id="footer">
-			<ul class="icons">
-				<a href="https://www.linkedin.com/in/allison-lee-338a6a119/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a>
-				<a href="https://github.com/a11i5on" class="icon fa-github"><span class="label">Github</span></a>
-			</ul>
-			<p>&copy Allison Lee 2017</p>
-		</div>
-	</body>
-</html>
+ 			<p class = "inblurb"> 
+ 				<br>
+ 				Thank you for visiting my website! My name is Allison (or 奥玲 in Mandarin and みさと in Japanese). <br><br>
+ 				I'm a rising sophomore at Harvard concentrating in Computer Science with a passion for connecting the world. For me, that means developing technology, making music, and learning foreign languages. Some highlights of this include studying abroad in Hangzhou in high school, playing in orchestras and singing a capella, and interning at TripAdvisor! <br><br>
+ 				Please feel free to check out my projects, résumé, or just say hi. :) <br><br><br><br><br>
+ 			</p>
+ 		</div>
+
+ 		<br><br>
+
+ 		<div class = "blurb">
+ 			<h2>What I've been up to recently</h2>
+ 			<p class = "inblurb">
+ 				A capella<br>
+ 				Travelling (I'm in Tokyo right now!!)<br>
+ 			</p>
+ 		</div>
+ 
+ 		<br>
+ 
+ 		<footer>
+ 			<p>
+ 				<a href="https://www.linkedin.com/in/allison-lee-338a6a119/"><i class="fa fa-linkedin"></i></a>
+ 				<a href="https://github.com/a11i5on"><i class="fa fa-github"></i></a>
+ 				<a href=https://www.facebook.com/allison.lee.77><i class="fa fa-facebook"></i></a><br>
+ 				&copy Allison Lee 2017
+ 			</p>
+ 		</footer>
+
+ 	</body>
+ </html>
