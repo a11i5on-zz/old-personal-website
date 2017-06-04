@@ -7,29 +7,26 @@
  		<script src="https://use.fontawesome.com/df62121d02.js"></script>
  		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
  		<script>
-	 		$("#slideshow > div:gt(0)").hide();
-
-			setInterval(function() {
-			  $('#slideshow > div:first')
-			    .fadeOut(1500)
-			    .next()
-			    .fadeIn(1500)
-			    .end()
-			    .appendTo('#slideshow');
-			}, 5000);
+	 		$(function(){
+				$('.slideshow img:gt(0)').hide();
+				setInterval(function(){$('.slideshow :first-child').fadeOut().next('img').fadeIn().end().appendTo('.slideshow');}, 5000);
+			});
  		</script>
+ 		<link href="https://fonts.googleapis.com/css?family=Pinyon+Script|Old+Standard+TT" rel="stylesheet">
  		<style>
 			body {
 				background-color: #f7e6ff;
-				font-family: fantasy;
+				font-family: 'Old Standard TT', sans-serif;
 				margin: 0px;
+				font-size: 16px;
 			}
 
 			h2 {
 				padding-left: 20px;
 				color: #4d004d;
 				margin-top: 40px;
-				font-family: cursive;
+				font-family: 'Pinyon Script', cursive;
+				font-size: 30px;
 			}
 			
 			p    {
@@ -37,16 +34,21 @@
 			}
 			
 			header {
-				font-family: cursive;
+				font-family: 'Pinyon Script', cursive;
 				text-align: center;
 				color: #f7e6ff;
 				background: white;
-				padding: 22px;
-				font-size: 25px;
+				width: 100%;
+				font-size: 32px;
+				position:fixed !important;
+				z-index: 1000;
+				border-style:double;
+				border-color: #DCDCDC;
+				border-width: 5px;
 			}
 
 			footer {
-				font-family: cursive;
+				font-family: 'Pinyon Script', cursive;
 				text-align: center;
 				color: #f7e6ff;
 			}
@@ -78,7 +80,7 @@
 			}
 
 			.blurb {
-				margin: 30px 100px 30px 100px;
+				margin: 50px 100px 50px 100px; /* top right bottom left */ 
 				border-style: double; 
 				background-color: white;
 				border-color: #DCDCDC;
@@ -87,19 +89,19 @@
 
 			.inblurb {
 				margin-left: 40px;
+				margin-bottom: 60px;
 				padding-right:40px;
 			}
 
-			#slideshow { 
+			.slideshow { 
 			    float: right;
 			    position: relative; 
 			    width: 340px; 
 			    height: 300px; 
-			    margin-left: 30px;
-			    margin-right: 40px;
+			    margin-right: 20px;
 			}
 
-			#slideshow div { 
+			.slideshow img { 
 			    position: absolute; 
 			    top: 10px; 
 			    left: 10px; 
@@ -107,52 +109,136 @@
 			    bottom: 10px; 
 			}
 
+			.flip-container {
+				perspective: 1000px;
+			}
+
+			.flip-container:hover .flipper, .flip-container.hover .flipper {
+				transform: rotateY(180deg);
+			}
+
+			.flip-container, .front, .back {
+				width: 320px;
+				height: 400px;
+			}
+
+			.flipper {
+				transition: 0.7s; /* Flipping speed */ 
+				transform-style: preserve-3d;
+				position: relative;
+			}
+
+			.front, .back {
+				backface-visibility: hidden;
+				position: absolute;
+				top: 0;
+				left: 0;
+				border-style: double; 
+				background-color: #DCDCDC;
+				border-color: #DCDCDC;
+			}
+
+			.front {
+				z-index: 2;
+				transform: rotateY(0deg);
+			}
+
+			.back {
+				transform: rotateY(180deg);
+				background-color: #f7e6ff;
+			}
+
+			.inback {
+				padding-left: 30px;
+				padding-right: 30px;
+			}
+
 		</style>
  	</head>
  
  	<header>
+ 	<br>
 		<a href="../">Allison Lee</a>
 		<div class="smallfont">
 			<a href="projects.html"><span>Projects </span></a>
 			<a href="resume.html"><span>Résumé </span></a>
 			<a href="contact.html"><span>Say hi!</span></a>
 		</div>
+	<br>
  	</header>
 
- 	<br><br>
+ 	<br><br><br><br><br><br><br><br><br><br>
 
  	<body>
  		<div class = "blurb">
  			<h2>Hello!</h2>
- 			<div id="slideshow">
-				   <div>
-				     <img src="photos/photo1.jpg">
-				   </div>
-				   <div>
-				     <img src="photos/photo2.jpg">
-				   </div>
-				   <div>
-				     <img src="photos/photo3.jpg">
-				   </div>
+ 			<div class="slideshow inblurb">
+			     <img src="photos/photo1.jpg">
+			     <img src="photos/photo2.jpg">
+			     <img src="photos/photo3.jpg">
 			</div>
 
 
  			<p class = "inblurb"> 
- 				<br>
  				Thank you for visiting my website! My name is Allison (or 奥玲 in Mandarin and みさと in Japanese). <br><br>
  				I'm a rising sophomore at Harvard concentrating in Computer Science with a passion for connecting the world. For me, that means developing technology, making music, and learning foreign languages. Some highlights of this include studying abroad in Hangzhou in high school, playing in orchestras and singing a capella, and interning at TripAdvisor! <br><br>
- 				Please feel free to check out my projects, résumé, or just say hi. :) <br><br><br><br><br>
+ 				Please feel free to check out my projects, résumé, or just say hi. :) 
  			</p>
+ 			<br><br><br><br><br>
  		</div>
 
  		<br><br>
 
  		<div class = "blurb">
  			<h2>What I've been up to recently</h2>
- 			<p class = "inblurb">
- 				A capella<br>
- 				Travelling (I'm in Tokyo right now!!)<br>
- 			</p>
+ 			<div class="inblurb">
+ 			<table width="100%" style="text-align: center">
+				 <tr>
+				  	<td width="33%">
+					  	<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+							<div class="flipper">
+								<div class="front">
+									<img src="https://scontent.xx.fbcdn.net/v/t34.0-12/18902477_1049184268546398_1403323849_n.jpg?oh=3a5bb1a41a73dfb6923c8f218d3e7d32&oe=5935F03B">
+								</div>
+								<div class="back">
+									<h2>Shinjuku Gyoen, Shinjuku, Tokyo</h2>
+
+									An green gem in the heart of a crowded city
+								</div>
+							</div>
+						</div>
+				  	</td>
+				  <td width="33%">
+				  		<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+							<div class="flipper">
+								<div class="front">
+									<img src="https://scontent.xx.fbcdn.net/v/t1.0-0/s640x640/18814143_1048945221903636_6755051156640293401_n.jpg?oh=228c9239709c1d55e4d69903f344473c&oe=59AA1029">
+								</div>
+								<div class="back"> 
+										<h2>Tokyo Sky Tree Tower, Sumida, Tokyo</h2>
+
+										*Not pictured: the 5 foot life because everyone looks short in comparison to the second tallest building in the world
+								</div>
+							</div>
+						</div>
+				  </td>
+				  <td width="33%">
+				  		<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+							<div class="flipper">
+								<div class="front">
+									<img src="https://scontent.xx.fbcdn.net/v/t34.0-12/18835023_1049180815213410_382220741_n.jpg?oh=ba519b144247be0eadb0d1310307ee64&oe=5935C47A">
+								</div>
+								<div class="back">
+									<h2>Gen-chan Restaurant, Shinjuku, Tokyo</h2>
+
+									The sashimi in Japan is truly unrivaled :)
+								</div>
+							</div>
+						</div>
+				  </td>
+				 </tr>
+			</table>
+			</div>
  		</div>
  
  		<br>
@@ -161,7 +247,8 @@
  			<p>
  				<a href="https://www.linkedin.com/in/allison-lee-338a6a119/"><i class="fa fa-linkedin"></i></a>
  				<a href="https://github.com/a11i5on"><i class="fa fa-github"></i></a>
- 				<a href=https://www.facebook.com/allison.lee.77><i class="fa fa-facebook"></i></a><br>
+ 				<a href=https://www.facebook.com/allison.lee.77><i class="fa fa-facebook"></i></a>
+ 				<a href="https://www.instagram.com/allison_m_lee/"><i class="fa fa-instagram"></i></a><br>
  				&copy Allison Lee 2017
  			</p>
  		</footer>
