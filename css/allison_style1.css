@@ -35,9 +35,9 @@ header {
 	font-size: 32px;
 	position:fixed !important;
 	z-index: 1000;
-	border-style:double;
-	border-color: #DCDCDC;
-	border-width: 5px;
+	border-bottom-style: double;
+	border-bottom-color: #DCDCDC;
+	border-bottom-width: 5px;
 	opacity: 0.8;
 }
 
