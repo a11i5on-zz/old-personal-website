@@ -1,0 +1,53 @@
+body {
+        background-color: #ebccff;
+        font-family: 'Alice', serif;
+        padding-top:120px;
+        vertical-align: middle;
+        text-align: center;
+        font-size: medium;
+    }
+
+    h1 {
+        font-family: 'Sacramento', cursive;
+        color:#4C105D;
+        text-align: center;
+    }
+
+     .navbar {
+        min-height: 80px;
+        background-color: #FCFBE3;
+        -webkit-box-shadow: 0 8px 6px -6px #999;
+        -moz-box-shadow: 0 8px 6px -6px #999;
+        box-shadow: 0 8px 6px -6px #999;
+    }
+
+    .navbar-brand {
+      padding: 0 15px;
+      height: 80px;
+      line-height: 80px;
+    }
+
+    .navbar-toggle {
+      /* (80px - button height 34px) / 2 = 23px */
+      margin-top: 23px;
+      padding: 9px 10px !important;
+    }
+
+    @media (min-width: 768px) {
+      .navbar-nav > li > a {
+        /* (80px - line-height of 27px) / 2 = 26.5px */
+        padding-top: 26.5px;
+        padding-bottom: 26.5px;
+        line-height: 27px;
+      }
+
+    .carousel {
+      max-height: 400px;
+      overflow: hidden;
+
+  .item img {
+    width: 100%;
+    height: auto;
+  }
+}
+ß
