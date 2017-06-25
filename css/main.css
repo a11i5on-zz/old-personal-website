@@ -7,7 +7,6 @@ body {
   font-size: large;
   line-height: 140%;
   display: none;
-  overflow-x: hidden;
 }
 
 
@@ -23,7 +22,7 @@ h1.title:hover {
 
 .navbar {
   min-height: 80px;
-  background-color: #FFF8F0;
+  background-color: white; /* FFF8F0 */
   -webkit-box-shadow: 0 8px 6px -6px #999;
   -moz-box-shadow: 0 8px 6px -6px #999;
   box-shadow: 0 8px 6px -6px #999;
@@ -47,6 +46,10 @@ h1.title:hover {
   padding-top: 26.5px;
   padding-bottom: 26.5px;
   line-height: 27px;
+}
+
+.row-fluid {
+    white-space: nowrap;
 }
 
 .carousel {
@@ -127,10 +130,9 @@ h1.title:hover {
 }
 
 .btn-round {
-  width: 40px;
-  height: 40px;
   border-radius: 50%;
   margin-bottom: 10%;
+  background-color: white;
 }
 
 .btn-round.btn-lg {
@@ -138,12 +140,15 @@ h1.title:hover {
   height: 48px;
 }
 
-.btn-round.btn-sm {
-  width: 34px;
-  height: 34px;
+body > div > div.social.fade-in.six.hidden-xs > a > i {
+  color:#4C105D;
 }
 
-.btn-round.btn-xs {
-  width: 24px;
-  height: 24px;
+.resumeSection {
+  font-family: 'Poiret One', cursive;
 }
+
+.contents {
+  color:grey;
+}
+
